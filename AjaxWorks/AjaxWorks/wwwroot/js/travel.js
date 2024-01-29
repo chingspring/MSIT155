@@ -3966,10 +3966,10 @@
                 "address": "臺北市  文山區指南路三段33巷",
                 "xpostDate": "2014/03/04",
                 "file": {
-                    "img": {
+                    "img": [{
                         "@description": "指南宮貓空步道",
                         "text": "http://www.travel.taipei/d_upload_ttn/sceneadmin/pic/11002820.jpg"
-                    },
+                    }],
                     "video": [
                         {
                             "@description": "貓空觀光",
@@ -4475,10 +4475,10 @@
                 "address": "臺北市  萬華區成都路51號",
                 "xpostDate": "2015/09/22",
                 "file": {
-                    "img": {
+                    "img": [{
                         "@description": "天后宮",
                         "text": "http://www.travel.taipei/d_upload_ttn/sceneadmin/pic/11001499.jpg"
-                    }
+                    }]
                 },
                 "langinfo": "10",
                 "POI": "Y",
@@ -4678,10 +4678,10 @@
                 "address": "臺北市  大同區貴德街44號",
                 "xpostDate": "2015/01/08",
                 "file": {
-                    "img": {
+                    "img": [{
                         "@description": "李春生紀念教堂",
                         "text": "http://www.travel.taipei/d_upload_ttn/sceneadmin/pic/11001528.jpg"
-                    }
+                    }]
                 },
                 "langinfo": "10",
                 "POI": "Y",

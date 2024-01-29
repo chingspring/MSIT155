@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
     <link rel="stylesheet" href="~/AjaxWorks.styles.css" asp-append-version="true" />
+    @await RenderSectionAsync("Styles", required: false)
 </head>
 <body>
     <header>
@@ -26,7 +27,10 @@
                             <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="JsonTest">JsonTest</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="APIController" asp-action="Cities">Api</a>
+                            <a class="nav-link text-dark" asp-area="" asp-controller="API" asp-action="Cities">Api</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" asp-area="" asp-controller="HW" asp-action="Index">HW</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>

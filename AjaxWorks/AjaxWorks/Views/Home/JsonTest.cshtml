@@ -22,11 +22,11 @@
                 { "name": "Mary", "workYears": 7, "salary": 45000 }
             ]
         };
-        // for (let i = 0, max = emps.length; i < max; i++) {
-        //     console.log(emps[i].name)
-        //     console.log(emps[i].workYears)
-        //     console.log(emps[i].salary)
-        // }
+        for (let i = 0, max = emps.length; i < max; i++) {
+            console.log(emps[i].name)
+            console.log(emps[i].workYears)
+            console.log(emps[i].salary)
+        }
 
         //ES6 Array.method()
         // emps.forEach(emp => {
@@ -54,12 +54,12 @@
         theUl.innerHTML = liEmps.join("");
 
 
-        // //emp => {}
-        // console.log(emp.employees); //[]
-        // //emp.employees => [{},{},{}];
-        // console.log(emp.employees[2]);//{ "name": "Mary", "workYears": 7, "salary": 45000 }
-        // //emp.employees[2] => {}
-        // console.log(emp.employees[2].name);//Mary
+        //emp => {}
+        console.log(emp.employees); //[]
+        //emp.employees => [{},{},{}];
+        console.log(emp.employees[2]);//{ "name": "Mary", "workYears": 7, "salary": 45000 }
+        //emp.employees[2] => {}
+        console.log(emp.employees[2].name);//Mary
 
         // //[]  array[0]
         // console.log(emps[2]);//{ "name": "Mary", "workYears": 7, "salary": 45000 }

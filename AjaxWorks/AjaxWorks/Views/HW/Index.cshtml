@@ -1,0 +1,53 @@
+﻿﻿@{
+    ViewData["Title"] = "HW";
+}
+@section Styles{
+    <style>
+        .card{
+            display:flex;
+            flex-wrap:wrap;
+            justify-content: space-between;
+            width: 320px;
+        }
+
+        .card-img-top {
+            max-width: 100%;
+            height: auto;
+            object-fit: cover;
+        }
+    </style>
+}
+
+<div class="text-center">
+    <h1 class="display-4">Welcome</h1>
+    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+</div>
+
+<div id="card-group" class="card-group row-cols-3">
+
+</div>
+@section Scripts {
+    <script src="~/js/travel.js"></script>
+    <script>
+        const s = spots.CommonFormat.Section;
+/*       document.getElementById('title').innerText = s.stitle
+         document.getElementById('img').setAttribute('src', s.file.img[0].text)
+         document.getElementById('context').innerText = s.xbody
+         document.getElementById('footer').innerText=s.address */
+        let htmlCon=``;
+        for (let i = 0; i < 3; i++) {
+            htmlCon +=
+                `<div class="card">
+                <img class="card-img-top" src="${s[i].file.img[0].text}">
+                <div class="card-body">
+                    <h5 class="card-title">${s[i].stitle}</h5>
+                    <p class="card-text">${s[i].xbody}</p>
+                </div>
+                <div class="card-footer">
+                    <small class="text-muted">${s[i].address}</small>
+                </div>
+            </div>`;
+        };
+        document.getElementById('card-group').innerHTML = htmlCon;
+    </script>
+}

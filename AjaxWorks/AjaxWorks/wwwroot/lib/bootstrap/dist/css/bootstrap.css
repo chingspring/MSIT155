@@ -4443,7 +4443,7 @@ textarea.form-control-lg {
 
 .card {
   position: relative;
-  display: flex;
+  /*display: flex;*/
   flex-direction: column;
   min-width: 0;
   word-wrap: break-word;
