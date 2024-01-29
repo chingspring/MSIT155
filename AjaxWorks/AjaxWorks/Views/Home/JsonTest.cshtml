@@ -1,0 +1,75 @@
+﻿﻿
+@{
+    ViewData["Title"] = "JsonTest";
+}
+
+<h1>JsonTest</h1>
+<ul id="ul1"></ul>
+
+@section Scripts {
+
+    <script>
+        const theUl = document.querySelector('#ul1');
+
+        const emps = [{ "name": "Tom", "workYears": 3, "salary": 35000 },
+        { "name": "Jack", "workYears": 5, "salary": 40000 },
+        { "name": "Mary", "workYears": 7, "salary": 45000 }];
+
+        const emp = {
+            "employees": [
+                { "name": "Tom", "workYears": 3, "salary": 35000 },
+                { "name": "Jack", "workYears": 5, "salary": 40000 },
+                { "name": "Mary", "workYears": 7, "salary": 45000 }
+            ]
+        };
+        // for (let i = 0, max = emps.length; i < max; i++) {
+        //     console.log(emps[i].name)
+        //     console.log(emps[i].workYears)
+        //     console.log(emps[i].salary)
+        // }
+
+        //ES6 Array.method()
+        // emps.forEach(emp => {
+        //     // console.log(emp.name)
+        //     // console.log(emp.workYears)
+        //     // console.log(emp.salary)
+        //     //DOM
+        //     const eleLi = document.createElement("li");  //<li></li>
+        //     const txtLi = document.createTextNode(emp.name); //Mary
+        //     eleLi.appendChild(txtLi); //<li>Mary</li>
+        //     theUl.appendChild(eleLi); //<ul><li>Mary</li></ul>
+        // })
+
+        const liEmps = emps.map(emp => `<li>${emp.name},${emp.workYears},${emp.salary}</li>`);
+
+        // const liEmps = emps.map(emp => {
+        //     const { name, workYears, salary } = emp;  //解構賦值 { "name": "Tom", "workYears": 3, "salary": 35000 }
+        //     return (
+        //         `
+        //               <li>${name},${workYears},${salary}</li>
+        //               `
+        //     )
+        // });
+        // console.log(liEmps.join(""));
+        theUl.innerHTML = liEmps.join("");
+
+
+        // //emp => {}
+        // console.log(emp.employees); //[]
+        // //emp.employees => [{},{},{}];
+        // console.log(emp.employees[2]);//{ "name": "Mary", "workYears": 7, "salary": 45000 }
+        // //emp.employees[2] => {}
+        // console.log(emp.employees[2].name);//Mary
+
+        // //[]  array[0]
+        // console.log(emps[2]);//{ "name": "Mary", "workYears": 7, "salary": 45000 }
+        //  //{}
+        // console.log(emps[2].name); //Mary
+        // //console.log(emps);
+
+        //讀取JSON資料
+
+        //顯示在網頁上
+
+    </script>
+}
