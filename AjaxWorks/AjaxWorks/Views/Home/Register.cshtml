@@ -32,13 +32,34 @@
 
 @section Scripts {
     <script>
-        (async () => {
-            const url = '@Url.Content("~/api/register")?name=Tom&age=30&email=Tom@company.com';
-            const response = await fetch(url);
-            const data = await response.text();
-            console.log(data);
+        // (async () => {
+        //     const url = '@Url.Content("~/api/register")?name=Tom&age=30&email=Tom@company.com';
+        //     const response = await fetch(url);
+        //     const data = await response.text();
+        //     console.log(data);
 
-        })();
+        // })();
+
+        const username = document.getElementById('userName');
+        const divWarning = document.getElementById('divWarning');
+
+        username.addEventListener('input', async () => {
+            try {
+                const name = username.value;
+                console.log(name);
+                const url = '@Url.Content("~/Api/checkAccount")?name=' + name;
+                const response = await fetch(url);
+                const data = await response.text();
+                console.log(data);
+                divWarning.innerHTML = data;
+
+            }
+            catch (error) {
+                console.error('Fetch error:', error);
+                divWarning.innerHTML = error;
+            }
+        });
+
 
     </script>
 }

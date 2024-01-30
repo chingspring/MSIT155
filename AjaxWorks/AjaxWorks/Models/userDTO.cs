@@ -1,4 +1,6 @@
-﻿namespace MSIT155Site.Models.DTO
+﻿using AjaxWorks.Models;
+
+namespace MSIT155Site.Models.DTO
 {
     public class UserDTO
     {

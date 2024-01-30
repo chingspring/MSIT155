@@ -12,6 +12,24 @@ namespace AjaxWorks.Controllers
         {
             _context = context;
         }
+
+        public IActionResult checkAccount(string name)
+        {
+            if(!string.IsNullOrEmpty(name))
+            {
+                var existUser = _context.Members.FirstOrDefault(m => m.Name == name);
+                if(existUser != null)
+                {
+                    return Content("帳號已存在", "text/plain", Encoding.UTF8);
+                }
+                else
+                {
+                    return Content("帳號可使用", "text/plain", Encoding.UTF8);
+                }
+            }
+            return Content("請輸入內容", "text/plain", Encoding.UTF8);
+        }
+
         public IActionResult Avatar(int id = 1)
         {
             Member? member = _context.Members.Find(id);
