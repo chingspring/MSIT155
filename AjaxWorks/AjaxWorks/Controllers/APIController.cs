@@ -68,6 +68,12 @@ namespace AjaxWorks.Controllers
             return Json(cities);
         }
 
+        //根據城市名稱讀取鄉鎮區
+        public IActionResult District(string city)
+        {
+            var districts = _context.Addresses.Where(c=>c.City==city).Select(a=>a.SiteId).Distinct();
+            return Json(districts);
+        }
 
 
     }

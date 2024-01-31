@@ -1,0 +1,22 @@
+﻿
+@{
+    ViewData["Title"] = "Avatar";
+}
+
+<h1>Avatar</h1>
+<img id="img1" src="" />
+
+@section Scripts{
+
+    <script>
+        (async() => { 
+            const avatar = document.querySelector('#img1');
+            const url = '@Url.Content("~/API/Avatar/2")';
+            const response = await fetch(url);
+            const datas = await response.blob();
+            console.log(datas);
+            avatar.src = URL.createObjectURL(datas);
+        })()
+
+    </script>
+}
