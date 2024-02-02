@@ -35,6 +35,16 @@ namespace AjaxWorks.Controllers
             return View();
         }
 
+        public IActionResult Spot()
+        {
+            return View();
+        }
+
+        public IActionResult AutoComplete(string keyword)
+        {
+            return View();
+        }
+
         public IActionResult JsonTest()
         {
             return View();

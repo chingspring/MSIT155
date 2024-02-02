@@ -9,6 +9,7 @@
     <option value="item2">item2</option>
 </select>
 <select id="selDistrict"></select>
+<select id="selRoad"></select>
 
 @section Scripts{
 
@@ -47,5 +48,25 @@
         //根據城市的選擇，載入鄉鎮區的選項
         selCity.addEventListener('change', loadDistricts);
 
+        const loadRoads = async () => {
+            //讀取district名稱
+            // console.log(selDistrict.selectedIndex);
+            // console.log(selDistrict.options[selDistrict.selectedIndex].value);
+            const district = selDistrict.options[selDistrict.selectedIndex].value;
+
+            const url = `@Url.Content("~/api/roads")?district=${district}`;
+            const response = await fetch(url);
+            const datas = await response.json();
+            //console.log(datas);
+            //讀取資料
+            const optRoads = datas.map(road => {
+                return (`<option value='${road}'>${road}</option>`);
+            })
+            //顯示資料
+            selRoad.innerHTML = optRoads.join("");
+
+
+        }
+        selDistrict.addEventListener('change', loadRoads);
     </script>
 }
