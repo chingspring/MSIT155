@@ -44,6 +44,10 @@ namespace AjaxWorks.Controllers
         {
             return View();
         }
+        public IActionResult Cors()
+        {
+            return View();
+        }
 
         public IActionResult JsonTest()
         {
