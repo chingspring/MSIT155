@@ -15,7 +15,7 @@ namespace AjaxWorks.Controllers
             _context = context;
             _environment = environment;
         }
-
+                
         public IActionResult checkAccount(string name)
         {
             if(!string.IsNullOrEmpty(name))
